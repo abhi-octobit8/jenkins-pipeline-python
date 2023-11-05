@@ -1,0 +1,11 @@
+# database-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: database-config
+data:
+  DJANGO_DB_NAME: your-db-name
+  DJANGO_DB_USER: your-db-user
+  DJANGO_DB_PASSWORD: your-db-password
+  DJANGO_DB_HOST: your-db-host
+  DJANGO_DB_PORT: "5432"  # Update the port as needed
