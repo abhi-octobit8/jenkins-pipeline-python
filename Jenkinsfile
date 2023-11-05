@@ -30,6 +30,17 @@ pipeline {
             }
         }
 
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    def scannerHome = tool name: 'default-sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    withSonarQubeEnv('default-sonar') {
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
+
         // stage('Build Docker Image') {
         //     steps {
         //         // Build a Docker image of your Django project
