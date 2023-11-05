@@ -16,17 +16,17 @@ pipeline {
         stage('Build and Test') {
             steps {
                 // Set up a Python virtual environment
-                sh 'python3 -m venv venv'
-                sh 'source venv/bin/activate'
+                bat 'python3 -m venv venv'
+                bat 'source venv/bin/activate'
 
                 // Install dependencies
-                sh 'pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
 
                 // Run Django database migrations
-                sh 'python manage.py migrate'
+                bat 'python manage.py migrate'
 
                 // Run Django tests
-                sh 'python manage.py test'
+                bat 'python manage.py test'
             }
         }
 
