@@ -35,7 +35,7 @@ pipeline {
                 script {
                     def scannerHome = tool name: 'default-sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
                     withSonarQubeEnv('default-sonar') {
-                        sh "${scannerHome}/bin/sonar-scanner"
+                        bat "${scannerHome}/bin/sonar-scanner"
                     }
                 }
             }
