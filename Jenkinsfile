@@ -16,7 +16,7 @@ pipeline {
         stage('Build and Test') {
             steps {
                 // Set up a Python virtual environment
-                bat 'python3 -m venv venv'
+                bat 'python -m venv venv'
                 bat 'source venv/bin/activate'
 
                 // Install dependencies
